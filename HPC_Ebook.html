@@ -688,10 +688,6 @@ input[type=range]{width:100%;accent-color:var(--gold-2);height:4px}
 <div id="prefs">
   <h4>Tùy chỉnh đọc</h4>
   <div class="pref-row">
-    <div class="prl">Cỡ chữ <span id="fs-val">17px</span></div>
-    <input type="range" id="pref-fs" min="15" max="22" step="1" value="17">
-  </div>
-  <div class="pref-row">
     <div class="prl">Giãn dòng</div>
     <div class="seg" id="pref-lh">
       <button data-v="1.6">Gọn</button>
@@ -975,7 +971,7 @@ const BOOK = {
     {
       id:'part1', num:'01', eyebrow:'Big Picture', title:'Triết lý của hệ thống',
       desc:'Hiểu tư duy đằng sau toàn bộ hệ thống HPC — 5 trụ cột, vai trò trung tâm của posterior chain, và dòng chảy 6 tháng.',
-      time:'18 phút', locked:false,
+      time:'45 phút', locked:false,
       prereq:'Nên đọc xong Part 0 để nắm triết lý nền tảng và các nguyên tắc an toàn.',
       outcomes:[
         'Định nghĩa một cơ thể hiệu suất cao qua 5 trụ cột: Strength, Power, Hypertrophy, Conditioning, Movement Quality',
@@ -1133,7 +1129,7 @@ const BOOK = {
     ,{
       id:'part2', num:'02', eyebrow:'Assess', title:'Đo cơ thể trước khi bắt đầu',
       desc:'Test đầu vào, đo tỷ lệ đòn bẩy cơ thể, kiểm tra muscle sling, và bản đồ đọc cơ thể để biết bạn nên bắt đầu từ đâu.',
-      time:'22 phút', locked:false,
+      time:'60 phút', locked:true,
       prereq:'Nên đọc xong Part 1 để nắm 5 trụ cột và mô hình Engine – Frame – Transmission – Fuel – Control.',
       outcomes:[
         'Hiểu vì sao phải test trước khi tập, và 6 nhóm test đầu vào cần làm',
@@ -1446,7 +1442,7 @@ function renderAuthor(){
           <div class="tl-item"><div class="role">Giảng viên miền Nam — HFI</div><div class="org">Đào tạo và chuẩn hóa chuyên môn cho huấn luyện viên</div></div>
           <div class="tl-item"><div class="role">Giám đốc chuyên môn &amp; quản lý — PPC</div><div class="org">Education Director / Performance Director</div></div>
           <div class="tl-item"><div class="role">Host podcast chuyên môn</div><div class="org">Về sức khỏe, tập luyện &amp; performance</div></div>
-          <div class="tl-item"><div class="role">5+ năm đào tạo chuyên sâu cho PTs</div><div class="org">Coaching kinh nghiệm: bóng rổ, MMA, BJJ</div></div>
+          <div class="tl-item"><div class="role">10+ năm đào tạo chuyên sâu cho PTs</div><div class="org">Coaching kinh nghiệm: bóng rổ, MMA, BJJ</div></div>
         </div>
 
         <div class="block-title">Chứng chỉ tiêu biểu</div>
@@ -1533,7 +1529,7 @@ function renderTOC(){
         <div class="info">
           <div class="pt">Bắt đầu</div>
           <div class="ti">Hướng dẫn sử dụng</div>
-          <div class="desc">Tính năng, cách ghi chú, chỉnh cỡ chữ và cách lưu file. Đọc 2 phút trước khi bắt đầu.</div>
+          <div class="desc">Tính năng, cách ghi chú, giãn dòng và cách lưu file. Đọc 2 phút trước khi bắt đầu.</div>
         </div>
         <div class="toc-status">
           <span class="toc-time">${I.arrow}</span>
@@ -1621,7 +1617,7 @@ function renderGuide(){
       <div class="gfeat"><div class="gi">${I.pen}</div><h4>Ghi chú cá nhân</h4><p>Viết suy nghĩ của riêng bạn lên từng đoạn, thêm/sửa/xóa tùy ý.</p></div>
       <div class="gfeat"><div class="gi">${I.bookmark}</div><h4>Bookmark</h4><p>Bấm nút cờ trên thanh trên cùng để đánh dấu trang đang đọc, vào Sổ tay bấm lại để nhảy về đúng chỗ.</p></div>
       <div class="gfeat"><div class="gi">${I.progress}</div><h4>Theo dõi tiến độ</h4><p>Tự ghi nhớ bạn đã đọc đến đâu và tiếp tục đúng chỗ.</p></div>
-      <div class="gfeat"><div class="gi">${I.sliders}</div><h4>Tùy chỉnh đọc</h4><p>Đổi cỡ chữ, giãn dòng và độ rộng trang cho dễ đọc.</p></div>
+      <div class="gfeat"><div class="gi">${I.sliders}</div><h4>Tùy chỉnh đọc</h4><p>Giãn dòng và độ rộng trang cho dễ đọc.</p></div>
       <div class="gfeat"><div class="gi">${I.moon}</div><h4>Chế độ sáng / tối</h4><p>Đọc ban ngày hay ban đêm đều thoải mái cho mắt.</p></div>
     </div>
 
@@ -1644,7 +1640,6 @@ function renderGuide(){
       <div class="gsub">Cá nhân hóa trải nghiệm đọc cho vừa mắt bạn.</div>
       <div class="gsteps">
         <div class="gstep"><div class="sn">1</div><div class="sb"><strong>Mở bảng tùy chỉnh</strong><p>Bấm nút <span class="kbd">${I.sliders}</span> trên thanh trên cùng (bên cạnh nút mục lục).</p></div></div>
-        <div class="gstep"><div class="sn">2</div><div class="sb"><strong>Kéo thanh cỡ chữ</strong><p>Trượt qua lại để tăng/giảm cỡ chữ từ 15px đến 22px. Chữ thay đổi ngay lập tức.</p></div></div>
         <div class="gstep"><div class="sn">3</div><div class="sb"><strong>Chọn giãn dòng</strong><p>Ba mức: <span class="kbd">Gọn</span> <span class="kbd">Vừa</span> <span class="kbd">Thoáng</span> — chọn mức giúp mắt bạn đỡ mỏi.</p></div></div>
         <div class="gstep"><div class="sn">4</div><div class="sb"><strong>Chọn độ rộng trang</strong><p>Ba mức: <span class="kbd">Hẹp</span> <span class="kbd">Chuẩn</span> <span class="kbd">Rộng</span> — màn hình lớn nên để rộng, điện thoại nên để hẹp.</p></div></div>
         <div class="gstep"><div class="sn">5</div><div class="sb"><strong>Đổi sáng / tối</strong><p>Bấm nút <span class="kbd">${I.moon}</span> để chuyển giữa nền sáng và nền tối. Mọi cài đặt đều được nhớ cho lần mở sau.</p></div></div>
