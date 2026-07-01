@@ -11,26 +11,6 @@
 /* ============================================================
    HPC PREMIUM EBOOK — DESIGN TOKENS
    ============================================================ */
-   .paywall{min-height:70vh;display:grid;place-items:center;padding:60px 20px}
-.paywall-inner{max-width:440px;text-align:center;background:var(--paper-2);
-  border:1px solid var(--line);border-radius:20px;padding:44px 32px;box-shadow:var(--shadow-lg)}
-.pw-lock{color:var(--gold-2);margin-bottom:14px}
-.pw-lock svg{width:34px;height:34px}
-.pw-eyebrow{font-family:var(--font-util);font-size:.7rem;letter-spacing:.28em;
-  text-transform:uppercase;color:var(--gold-2);margin-bottom:12px}
-.pw-title{font-family:var(--font-display);font-size:1.5rem;color:var(--ink);margin-bottom:14px}
-.pw-desc{font-size:.95rem;color:var(--ink-soft);line-height:1.6;margin-bottom:26px}
-.pw-form{display:flex;gap:10px;margin-bottom:18px}
-.pw-form input{flex:1;padding:13px 16px;border-radius:12px;border:1px solid var(--line);
-  background:var(--paper);color:var(--ink);font-size:.95rem;font-family:var(--font-body)}
-.pw-form input:focus{outline:none;border-color:var(--gold)}
-.pw-btn{padding:13px 24px;border:none;border-radius:12px;cursor:pointer;
-  font-family:var(--font-util);font-weight:600;letter-spacing:.04em;color:#0B0B0B;
-  background:linear-gradient(135deg,var(--gold-soft),var(--gold) 55%,var(--gold-2))}
-.pw-buy{display:inline-block;font-size:.88rem;color:var(--gold-2);
-  text-decoration:underline;text-underline-offset:4px}
-.paywall-inner.shake{animation:shake .4s}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 :root{
   --gold:#D4AF37;
   --gold-2:#B8860B;
@@ -169,15 +149,8 @@ main{max-width:var(--read-width);margin:0 auto;padding:0 clamp(20px,5vw,32px)}
   letter-spacing:.01em;margin-top:14px;color:#EFE7CF;opacity:0;
   animation:rise 1s var(--ease) .5s forwards}
 .cover-sub{
-  font-family:var(--font-util);
-  font-size:clamp(.68rem,1.6vw,.8rem);
-  letter-spacing:.34em;text-transform:uppercase;font-weight:500;
-  margin-top:16px;
-  color:transparent;
-  background:linear-gradient(90deg,var(--gold),var(--gold-2));
-  -webkit-background-clip:text;background-clip:text;
-  opacity:0;animation:rise 1s var(--ease) .65s forwards;
-}
+  font-size:clamp(.9rem,2.5vw,1.05rem);color:#A99B6E;letter-spacing:.04em;
+  margin-top:18px;font-weight:400;opacity:0;animation:rise 1s var(--ease) .65s forwards}
 .cover-rule{width:54px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
   margin:38px auto 30px;opacity:0;animation:rise 1s var(--ease) .8s forwards}
 .cover-tagline{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;opacity:0;
@@ -190,20 +163,6 @@ main{max-width:var(--read-width);margin:0 auto;padding:0 clamp(20px,5vw,32px)}
 .cover-author .by{font-family:var(--font-util);font-size:.66rem;letter-spacing:.32em;
   text-transform:uppercase;color:#7E724D;margin-bottom:8px}
 .cover-author .name{font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:#EFE7CF}
-/* 3 tag pill */
-.cover-tags{
-  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
-  margin-top:26px;opacity:0;
-  animation:rise 1s var(--ease) .88s forwards;
-}
-.cover-tags span{
-  font-family:var(--font-util);
-  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-  color:#E3D49A;
-  padding:9px 18px;border-radius:100px;
-  border:1px solid rgba(212,175,55,.32);
-  background:rgba(212,175,55,.05);
-}
 .cover-cta{
   margin-top:52px;display:inline-flex;align-items:center;gap:11px;cursor:pointer;
   font-family:var(--font-util);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
@@ -299,24 +258,6 @@ h1.page-h1{
 
 .toc-part{border:1px solid var(--line);border-radius:16px;margin-bottom:16px;overflow:hidden;
   background:var(--paper);transition:border-color .3s,box-shadow .3s}
-  .toc-paid{
-  display:inline-flex;align-items:center;gap:5px;
-  font-family:var(--font-util);font-size:.72rem;font-weight:600;
-  letter-spacing:.03em;color:#0B0B0B;white-space:nowrap;
-  padding:5px 11px;border-radius:100px;
-  background:linear-gradient(135deg,var(--gold-soft),var(--gold) 60%,var(--gold-2));
-}
-.toc-status{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  justify-content:center;
-  gap:8px;
-  min-width:120px;
-}
-.toc-paid svg{width:13px;height:13px}
-.toc-part.paid-locked .toc-part-head{opacity:.85}
-.toc-part.paid-locked:hover .toc-part-head{opacity:1}
 .toc-part:hover{border-color:color-mix(in srgb,var(--gold) 40%,var(--line));box-shadow:var(--shadow)}
 .toc-part-head{display:flex;align-items:center;gap:18px;padding:22px 24px;cursor:pointer}
 .toc-num{font-family:var(--font-display);font-weight:900;font-size:1.6rem;color:var(--gold);
@@ -544,7 +485,7 @@ h1.page-h1{
    FLOATING TOOLBELT (highlight / note / bookmark)
    ============================================================ */
 #selbar{position:absolute;z-index:170;display:none;gap:4px;padding:6px;border-radius:12px;
-  background:var(--ink);box-shadow:0 14px 40px rgba(0,0,0,.3);transform:translate(-50%,-100%)}
+  background:var(--ink);box-shadow:0 14px 40px rgba(0,0,0,.3);transform:transl(-50%,-100%)}
 #selbar button{width:36px;height:36px;border-radius:8px;border:none;background:transparent;color:#EFE7CF;
   cursor:pointer;display:grid;place-items:center;transition:background .18s}
 #selbar button:hover{background:rgba(212,175,55,.25)}
@@ -896,16 +837,18 @@ td.visual-col,th.visual-col{width:74px;text-align:center;padding:8px}
 
 <!-- ================= COVER ================= -->
 <section id="cover" class="view">
+  <div class="cover-glow"></div>
+  <div class="cover-ring"></div>
   <div class="cover-grain"></div>
   <div class="cover-inner">
     <div class="cover-eyebrow">The Complete Hybrid Performance System</div>
     <div class="cover-logo">HPC</div>
-    <div class="cover-title">6-Month<br>Performance Body</div>
+    <div class="cover-title">6-Month Performance Body</div>
+    <div class="cover-sub">Strength · Power · Hypertrophy · Conditioning · Longevity</div>
     <div class="cover-rule"></div>
-
-  <div class="cover-tags">
-    <span>Strength</span><span>Conditioning</span><span>Longevity</span>
-  </div>
+    <div class="cover-tagline">
+      <span>Build Strength</span><span>Build Performance</span><span>Build Longevity</span>
+    </div>
     <div class="cover-author">
       <div class="by">Tác giả</div>
       <div class="name">Hà Quốc Huy</div>
@@ -914,7 +857,8 @@ td.visual-col,th.visual-col{width:74px;text-align:center;padding:8px}
       Bắt đầu đọc
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </button>
-<div class="cover-resume" id="resume-link" style="display:none !important"></div>  </div>
+    <div class="cover-resume" id="resume-link" style="display:none" onclick="App.resume()">Tiếp tục từ vị trí đang đọc →</div>
+  </div>
 </section>
 
 <!-- ================= MAIN VIEWS ================= -->
@@ -1636,7 +1580,7 @@ const PORTRAIT = 'avt.png';
 const Store = {
   KEY:'hpc:v1',
   data:null,
-load(){
+  load(){
     try{ this.data = JSON.parse(localStorage.getItem(this.KEY)) || null; }catch(e){ this.data=null; }
     if(!this.data){
       this.data = {
@@ -1646,20 +1590,8 @@ load(){
         completed:[], readChildren:[], quizScores:{},
         highlights:[], notes:[], bookmarks:[]
       };
+      this.save();
     }
-    // vá các field thiếu cho dữ liệu lưu từ bản cũ
-    const d=this.data;
-    d.theme=d.theme||'light';
-    d.prefs=d.prefs||{fs:17,lh:1.85,w:760};
-    d.progress=d.progress||{lastView:null,lastPart:null,percent:0,scroll:{}};
-    if(!d.progress.scroll) d.progress.scroll={};
-    if(!Array.isArray(d.completed)) d.completed=[];
-    if(!Array.isArray(d.readChildren)) d.readChildren=[];
-    if(!d.quizScores) d.quizScores={};
-    if(!Array.isArray(d.highlights)) d.highlights=[];
-    if(!Array.isArray(d.notes)) d.notes=[];
-    if(!Array.isArray(d.bookmarks)) d.bookmarks=[];
-    this.save();
     return this.data;
   },
   save(){ try{ localStorage.setItem(this.KEY, JSON.stringify(this.data)); }catch(e){} },
@@ -2020,7 +1952,7 @@ const BOOK = {
     ,{
       id:'part2', num:'02', eyebrow:'Assess', title:'Đo cơ thể trước khi bắt đầu',
       desc:'Kiểm tra đầu vào, đo tỷ lệ đòn bẩy cơ thể, kiểm tra dây chuyền cơ (muscle sling), và bản đồ đọc cơ thể để biết bạn nên bắt đầu từ đâu.',
-      time:'60 phút', locked:false,
+      time:'22 phút', locked:false,
       prereq:'Nên đọc xong Part 1 để nắm 5 trụ cột và mô hình Engine – Frame – Transmission – Fuel – Control.',
       outcomes:[
         'Hiểu vì sao phải kiểm tra trước khi tập, và 6 nhóm bài kiểm tra (test) đầu vào cần làm',
@@ -2317,7 +2249,7 @@ const BOOK = {
 {
   id:'part3', num:'03', eyebrow:'Customize', title:'Cá nhân hóa chương trình',
   desc:'Điều chỉnh chương trình theo tỷ lệ đòn bẩy cơ thể, đọc kết quả kiểm tra để biết nên ưu tiên gì, dùng hệ thống ưu tiên và liều tối thiểu hiệu quả, rồi chọn version phù hợp mục tiêu.',
-  time:'90 phút', locked:false,
+  time:'34 phút', locked:false,
   prereq:'Nên đọc xong Part 2 để đã tự đo đòn bẩy cơ thể và biết mình đang yếu hệ nào (Engine / Frame / Transmission / Fuel / Control).',
   outcomes:[
     'Biết cách program cho từng kiểu đòn bẩy: chân ngắn / chân dài / tay ngắn / tay dài',
@@ -3106,7 +3038,7 @@ alt="Program Blueprint">
 {
   id:'part4', num:'04', eyebrow:'Build', title:'Xây và vận hành chương trình',
   desc:'Dựng kiến trúc 6-block cho mỗi buổi tập, nắm bộ công cụ training methods và progression, phát triển power và reactive strength, rồi vận hành chương trình suốt 6 tháng.',
-  time:'90 phút', locked:false,
+  time:'40 phút', locked:false,
   prereq:'Nên đọc xong Part 3 để đã biết cá nhân hóa theo đòn bẩy, điểm yếu và mục tiêu trước khi dựng buổi tập.',
   outcomes:[
     'Hiểu vì sao mỗi buổi tập cần kiến trúc, và nắm cấu trúc 6-block (Reset, Ignite, Force, Build, Transfer, Fuel)',
@@ -3696,7 +3628,7 @@ alt="Program Blueprint">
 {
   id:"part5", num:"05", eyebrow:"Execute", title:"Thực thi đúng cách",
   desc:"Thực thi phần ngoài phòng tạ: nền tảng thể lực và hệ năng lượng, tích hợp chạy bộ và võ thuật, hồi phục và hệ miễn dịch, hệ dinh dưỡng hiệu suất, và theo dõi tiến độ.",
-  time:"120 phút", locked:false,
+  time:"52 phút", locked:false,
   prereq:"Nên đọc xong Part 4 để đã biết dựng buổi tập và vận hành chương trình trước khi đi vào thực thi conditioning, dinh dưỡng và hồi phục.",
   outcomes:[
     "Hiểu vai trò của nền tảng thể lực (conditioning) và 5 hệ năng lượng, biết phối Zone 2 / tempo / loaded GPP / HIIT đúng liều",
@@ -4602,7 +4534,7 @@ Toàn bộ Part 5 có thể được tóm tắt thành quy trình dưới đây,
 {
   id:'part6', num:'06', eyebrow:'Troubleshoot', title:'Xử lý khi có vấn đề',
   desc:'Đọc tín hiệu cơ thể để tự điều chỉnh (autoregulation) theo Green/Yellow/Red Day, nhận biết và sửa 12 lỗi phổ biến nhất khi theo chương trình, và bảng sửa lỗi cho từng dây chuyền cơ (muscle sling) yếu.',
-  time:'45 phút', locked:false,
+  time:'30 phút', locked:false,
   prereq:'Nên đọc xong Part 5 để đã nắm cách thực thi conditioning, recovery và dinh dưỡng trước khi học cách xử lý sự cố.',
   outcomes:[
     'Hiểu vì sao cần tự điều chỉnh (autoregulation) thay vì tập cứng theo giáo án',
@@ -6369,11 +6301,10 @@ function renderTOC(){
     </div>`;
       return;
     }
-  const done = Store.data.completed.includes(p.id);
+    const done = Store.data.completed.includes(p.id);
     const readKids = p.chapters.filter(c=>Store.data.readChildren.includes(c.id)).length;
-    const isPaid = !PaidGate.canView(p.id);
     html+=`
-    <div class="toc-part ${isPaid?'paid-locked':''}" data-part="${p.id}">
+    <div class="toc-part" data-part="${p.id}">
       <div class="toc-part-head" onclick="TOC.toggle('${p.id}')">
         <div class="toc-num">${p.num}</div>
         <div class="info">
@@ -6383,9 +6314,7 @@ function renderTOC(){
         </div>
         <div class="toc-status">
           <span class="toc-time">${I.clock} ${p.time}</span>
-          ${isPaid
-            ? `<span class="toc-paid">${I.lock} Cần mở khoá</span>`
-            : `<div class="check ${done?'done':''}">${I.check}</div>`}
+          <div class="check ${done?'done':''}">${I.check}</div>
         </div>
       </div>
       <div class="toc-children" id="kids-${p.id}">
@@ -6425,7 +6354,6 @@ function renderTOC(){
 
 const TOC = {
   toggle(pid){
-    if(!PaidGate.canView(pid)){ PaidGate.render(pid); return; }
     const k=document.getElementById('kids-'+pid);
     document.querySelectorAll('.toc-children').forEach(x=>{ if(x!==k) x.classList.remove('open'); });
     k.classList.toggle('open');
@@ -6960,60 +6888,7 @@ function wrapRange(range,cls,id,attr){
 /* ============================================================
    APP ROUTER + PROGRESS
    ============================================================ */
-/* ============================================================
-   PAID GATE — free tới Part 1, Part 2+ cần mật khẩu
-   ============================================================ */
-const PaidGate = {
-  freeParts: ['part0','part1'],     // các part xem miễn phí
-  KEY: 'hpc:unlocked',
-  PASSWORD: 'HPC2026',              // ⬅️ ĐỔI mật khẩu bạn muốn ở đây
-
-  isUnlocked(){ return localStorage.getItem(this.KEY)==='1'; },
-  canView(pid){ return this.freeParts.includes(pid) || this.isUnlocked(); },
-
-  tryUnlock(){
-    const inp=document.getElementById('gate-input');
-    const val=(inp?inp.value:'').trim();
-    if(val === this.PASSWORD){
-      localStorage.setItem(this.KEY,'1');
-      Toast.show('Đã mở khoá toàn bộ nội dung!');
-      App.openPart(this._pendingPid || 'part2');
-    } else {
-      Toast.show('Mật khẩu không đúng');
-      const box=document.getElementById('gate-box');
-      if(box){ box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake'); }
-    }
-  },
-
-  render(pid){
-    this._pendingPid = pid;
-    const part = BOOK.parts.find(x=>x.id===pid);
-    const name = part ? ('Part '+part.num+' · '+part.title) : 'Nội dung này';
-    const host = document.getElementById('view-part');
-    host.innerHTML = `
-      <div class="paywall">
-        <div class="paywall-inner" id="gate-box">
-          <div class="pw-lock">${I.lock || '🔒'}</div>
-          <div class="pw-eyebrow">Nội dung dành cho thành viên</div>
-          <h2 class="pw-title">${name}</h2>
-          <p class="pw-desc">Bạn đang đọc bản miễn phí (tới hết Part 1).<br>
-          Nhập mật khẩu để mở khoá toàn bộ 24 tuần chương trình.</p>
-          <div class="pw-form">
-            <input id="gate-input" type="password" placeholder="Nhập mật khẩu"
-                   onkeydown="if(event.key==='Enter')PaidGate.tryUnlock()">
-            <button class="pw-btn" onclick="PaidGate.tryUnlock()">Mở khoá</button>
-          </div>
-          <a class="pw-buy" href="https://www.facebook.com/huy.haquoc.98" target="_blank">
-            Chưa có mật khẩu? Mua full version →
-          </a>
-        </div>
-      </div>`;
-    this.go_part();
-  },
-  go_part(){ App.go('part'); }
-};
-   const App = {
-  
+const App = {
   current:'cover',
   init(){
     Store.load();
@@ -7064,10 +6939,9 @@ const PaidGate = {
       if(o&&f){o.style.display='block';f.style.display='none';}
       const bb=document.getElementById('btn-bookmark'); if(bb) bb.classList.remove('active'); }
   },
- openPart(pid,target){
+  openPart(pid,target){
     const part = BOOK.parts.find(x=>x.id===pid);
-    if(part && part.locked){ Toast.show('Phần này dành cho thành viên'); this.go('toc'); return; }
-    if(!PaidGate.canView(pid)){ PaidGate.render(pid); return; }
+    if(part && part.locked){ Toast.show('Phần này sắp ra mắt'); this.go('toc'); return; }
     renderPart(pid);
     this.go('part');
     Store.data.progress.lastView='part';
