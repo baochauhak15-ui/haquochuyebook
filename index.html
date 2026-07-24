@@ -6964,15 +6964,22 @@ function wrapRange(range,cls,id,attr){
 const PaidGate = {
   freeParts: ['part0','part1'],     // các part xem miễn phí
   KEY: 'hpc:unlocked',
-  PASSWORD: 'HPC2026',              // ⬅️ ĐỔI mật khẩu bạn muốn ở đây
+  // hash SHA-256 của mật khẩu — không lưu chữ thô, không đọc ngược ra được
+  _hash: '659b95259d240333ba0c8432de3e6b16fceec982e7f2dd00bd66ba9649d36839',
 
   isUnlocked(){ return localStorage.getItem(this.KEY)==='1'; },
   canView(pid){ return this.freeParts.includes(pid) || this.isUnlocked(); },
 
-  tryUnlock(){
+  async _sha256(text){
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+  },
+
+  async tryUnlock(){
     const inp=document.getElementById('gate-input');
     const val=(inp?inp.value:'').trim();
-    if(val === this.PASSWORD){
+    const hex = await this._sha256(val);
+    if(hex === this._hash){
       localStorage.setItem(this.KEY,'1');
       Toast.show('Đã mở khoá toàn bộ nội dung!');
       App.openPart(this._pendingPid || 'part2');
